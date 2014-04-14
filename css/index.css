@@ -8,6 +8,24 @@
     content: "";
 }
 
+.icons {
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    vertical-align: baseline;
+    width: 12px;
+    height: 12px;
+    background: url(../imgs/icons.png) 0 0 no-repeat;
+}
+
+.icons-phone {
+    background-position: 0 0;
+}
+
+.icons-email {
+    background-position: -22px 0;
+}
+
 .progress {
     display: none;
 }
@@ -89,4 +107,26 @@
     padding: 2px 3px;
     width: 150px;
     font-size: 12px;
+}
+
+.short-text,
+.long-text {
+    height: 24px;
+}
+
+.short-text {
+    width: 48px;
+    font-size: 12px;
+}
+
+.long-text {
+    width: 120px;
+}
+
+.other-action {
+    text-align: center;
+}
+
+.other-action .btn {
+    outline: none;
 }

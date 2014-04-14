@@ -1,8 +1,10 @@
 <?php
     $host = $_SERVER["HTTP_HOST"];
     $port = $_SERVER["SERVER_PORT"];
+    $uri = $_SERVER["REQUEST_URI"];
     $url = $port === "80" ? "http://" . $host : "http://" . $host . ":" . $port;
-    // echo $url;
+    $url .= $uri;
+    // print_r($_SERVER);
 ?>
 <!doctype html>
 <html lang="ZH">
@@ -15,19 +17,29 @@
 </head>
 <body>
     <div class="card">
-        <form action="createCard.php" class="card-form" method="post">
+        <form action="createCard.php" class="card-form" id="CardForm" method="post">
             <div class="text-box">
                 <div class="text-main">
                     <div class="base-info clearfix">
                         <p class="username">
-                            <span class="usernick">九龄</span>&nbsp;<span class="truename">颜慧清</span>&nbsp;&nbsp;<span class="workid">019</span>
+                            <span class="usernick">
+                                <input type="text" class="short-text" name="nick" id="UserNick" placeholder="花名">
+                            </span>&nbsp;
+                            <span class="truename">
+                                <input type="text" class="short-text" name="tname" id="UserName" placeholder="真名">
+                            </span>&nbsp;&nbsp;
+                            <span class="workid">
+                                <input type="text" class="short-text" name="tid" id="UserId" placeholder="工号">
+                            </span>
                         </p>
                         <p class="userbu">
-                            <span class="big-bu">UED</span> - <span class="small-bu">设计组</span>
+                            <span class="big-bu"><input type="text" class="short-text" name="bbu" id="BigBu" placeholder="部门"></span> - <span class="small-bu"><input type="text" class="short-text" name="sbu" id="SmallBu" placeholder="组"></span>
                         </p>
                     </div>
                     <p class="contact">
-                        <i class="icons icons-phone"></i>&nbsp;13967105449&nbsp;&nbsp;<i class="icons icons-mail"></i>&nbsp;huiqing.yan@kadang-inc.com
+                        <i class="icons icons-phone"></i>
+                        &nbsp;<input type="text" class="long-text" name="phone" id="Phone" placeholder="电话号码">&nbsp;&nbsp;
+                        <i class="icons icons-email"></i>&nbsp;<input type="text" class="long-text" name="email" id="Email" placeholder="电子邮件">
                     </p>
                     <p class="address">
                         杭州市萧山区金城路1038号国际创业中心13楼
@@ -35,7 +47,8 @@
                 </div>
             </div>
             <div class="head-area">
-                <img class="head-pic" src="<?php echo $url; ?>/imgs/default.png" alt="">
+                <input type="hidden" name="userpic" id="UserPic">
+                <img class="head-pic" id="HeadPic" src="<?php echo $url; ?>/imgs/default.png" alt="">
                 <span class="btn btn-success fileinput-button">
                     <i class="glyphicon glyphicon-plus"></i>
                     <span>上传头像</span>
@@ -49,6 +62,9 @@
         </div>
         <!-- 临时：返回数据写入测试 -->
         <div id="files" class="files"></div>
+    </div>
+    <div class="other-action">
+        <input type="button" id="CreateCard" value="生成名片" class="btn btn-primary">
     </div>
 <script src="./js/jquery-1.11.0.min.js"></script>
 <script src="./js/jquery.ui.widget.js"></script>
