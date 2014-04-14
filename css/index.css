@@ -1,0 +1,92 @@
+.clearfix {
+    *zoom: 1;
+}
+
+.clearfix:after {
+    clear: both;
+    display: table;
+    content: "";
+}
+
+.progress {
+    display: none;
+}
+
+.card {
+    position: relative;
+    margin: 15px auto;
+    width: 520px;
+    height: 180px;
+    font-family: '\5fae\8f6f\96c5\9ed1', "Microsoft YaHei", Tahoma, san-serif;
+}
+
+.card .text-box {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 518px;
+    height: 158px;
+    border: 1px solid #c1c1c1;
+    background-color: #fff;
+}
+
+.card .text-box .text-main {
+    padding-top: 30px;
+    padding-right: 20px;
+    padding-left: 190px;
+}
+
+.card .text-box .username {
+    float: left;
+}
+
+.card .text-box .username .usernick {
+    font-size: 16px;
+    color: #c10915;
+}
+
+.card .text-box .username .workid,
+.card .text-box .userbu {
+    color: #999;
+}
+
+.card .text-box .contact {
+    margin-top: 25px;
+    color: #999;
+    font-size: 12px;
+}
+
+.card .text-box .userbu {
+    float: right;
+}
+
+.card .text-box .address {
+    margin-top: 10px;
+    color: #999;
+}
+
+.card .head-area {
+    position: absolute;
+    left: 23px;
+    top: 0;
+    width: 158px;
+    height: 180px;
+    background: url(../imgs/hd_bg.png) 0 0 no-repeat;
+}
+
+.card .head-area .head-pic {
+    position: absolute;
+    left: 5px;
+    top: 35px;
+    width: 140px;
+    height: 140px;
+}
+
+.card .head-area .fileinput-button {
+    position: absolute;
+    bottom: 10px;
+    margin: 0 auto;
+    padding: 2px 3px;
+    width: 150px;
+    font-size: 12px;
+}
