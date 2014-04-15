@@ -64,6 +64,7 @@
 
     $nick = htmlspecialchars($_GET["nick"]);
     $name = htmlspecialchars($_GET["tname"]);
+    $post = htmlspecialchars($_GET["post"]);
     $tid = htmlspecialchars($_GET["tid"]);
     // $bu = htmlspecialchars($_GET["bbu"]);
     $group = htmlspecialchars($_GET["group"]);
@@ -79,7 +80,7 @@
     $tplsource = getImageSource($tpl, $tplsize["mime"]);
 
     $red = imagecolorallocate($tplsource, 193, 8, 20);
-    $gray = imagecolorallocate($tplsource, 153, 153, 153);
+    $gray = imagecolorallocate($tplsource, 102, 102, 102);
     $dark = imagecolorallocate($tplsource, 0, 0, 0);
     $white = imagecolorallocate($tplsource, 255, 255, 255);
 
@@ -87,13 +88,15 @@
     $consola = "./fonts/consola.ttf";
     $sontti = "./fonts/simsun.ttc";
 
-    imagecopy($tplsource, $headsource, 18, 35, 0, 0, $headsize[0], $headsize[1]);
-    imagettftext($tplsource, 13, 0, 190, 47, $red, $yahei, $nick);
-    imagettftext($tplsource, 10, 0, 245, 46, $dark, $yahei, $name);
-    imagettftext($tplsource, 10, 0, 290, 46, $gray, $yahei, $tid);
-    imagettftext($tplsource, 10, 0, 410, 46, $gray, $yahei, $group);
-    imagettftext($tplsource, 9, 0, 210, 107, $gray, $consola, $phone);
-    imagettftext($tplsource, 9, 0, 313, 107, $gray, $consola, $email);
+    imagecopy($tplsource, $headsource, 18 + (140 - $headsize[0]) / 2, 35 + (140 - $headsize[1]) / 2, 0, 0, $headsize[0], $headsize[1]);
+    imagettftext($tplsource, 10, 0, 85, 23, $white, $yahei, $group . "  " . $tid);
+    imagettftext($tplsource, 13, 0, 190, 52, $red, $yahei, $nick);
+    imagettftext($tplsource, 10, 0, 245, 52, $dark, $yahei, $name);
+    imagettftext($tplsource, 10, 0, 295, 52, $gray, $yahei, $post);
+    // imagettftext($tplsource, 10, 0, 290, 46, $gray, $yahei, $tid);
+    // imagettftext($tplsource, 10, 0, 410, 46, $gray, $yahei, $group);
+    imagettftext($tplsource, 10, 0, 192, 110, $gray, $sontti, $phone);
+    imagettftext($tplsource, 10, 0, 192, 130, $gray, $sontti, $email);
 
     header("Content-Type: " . $tplsize["mime"]);
     echoImage($tplsize["mime"], $tplsource);
