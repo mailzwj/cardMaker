@@ -42,9 +42,9 @@
     position: absolute;
     left: 0;
     top: 10px;
-    width: 518px;
-    height: 158px;
-    border: 1px solid #c1c1c1;
+    width: 520px;
+    height: 170px;
+    border: 2px solid #c1c1c1;
     background-color: #fff;
 }
 
@@ -69,9 +69,14 @@
 }
 
 .card .text-box .contact {
-    margin-top: 25px;
+    margin-top: 10px;
+    margin-bottom: 5px;
     color: #999;
     font-size: 12px;
+}
+
+.card .text-box .text-main .line2 {
+    margin: 0;
 }
 
 .card .text-box .userbu {
@@ -79,13 +84,14 @@
 }
 
 .card .text-box .address {
-    margin-top: 10px;
+    margin-top: 5px;
+    margin-bottom: 0;
     color: #999;
 }
 
 .card .head-area {
     position: absolute;
-    left: 23px;
+    left: 13px;
     top: 0;
     width: 158px;
     height: 180px;
@@ -98,15 +104,24 @@
     top: 35px;
     width: 140px;
     height: 140px;
+    background-position: center center;
+    background-repeat: no-repeat;
 }
 
 .card .head-area .fileinput-button {
     position: absolute;
+    left: 5px;
     bottom: 10px;
     margin: 0 auto;
     padding: 2px 3px;
-    width: 150px;
+    width: 140px;
     font-size: 12px;
+}
+
+.card .head-area .user-info {
+    position: absolute;
+    left: 62px;
+    top: 6px;
 }
 
 .short-text,
@@ -119,8 +134,17 @@
     font-size: 12px;
 }
 
+.mini-text {
+    width: 40px;
+    font-size: 12px;
+}
+
 .long-text {
-    width: 120px;
+    width: 100px;
+}
+
+.big-text {
+    width: 150px;
 }
 
 .other-action {
@@ -129,4 +153,9 @@
 
 .other-action .btn {
     outline: none;
+}
+
+.result {
+    padding-top: 10px;
+    text-align: center;
 }
