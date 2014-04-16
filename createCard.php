@@ -60,7 +60,7 @@
 
     date_default_timezone_set("PRC");
     $head = getRemoteImage($_GET["userpic"], "");
-    $tpl = "./imgs/tpl-new.png";
+    $tpl = "./imgs/tpl-nowx.png";
 
     $nick = htmlspecialchars($_GET["nick"]);
     $name = htmlspecialchars($_GET["tname"]);
@@ -96,7 +96,7 @@
     // imagettftext($tplsource, 10, 0, 290, 46, $gray, $yahei, $tid);
     // imagettftext($tplsource, 10, 0, 410, 46, $gray, $yahei, $group);
     imagettftext($tplsource, 10, 0, 192, 110, $gray, $sontti, $phone);
-    imagettftext($tplsource, 10, 0, 192, 130, $gray, $sontti, $email);
+    imagettftext($tplsource, 10, 0, 192, 132, $gray, $sontti, $email);
 
     header("Content-Type: " . $tplsize["mime"]);
     echoImage($tplsize["mime"], $tplsource);
