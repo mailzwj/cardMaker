@@ -89,7 +89,7 @@
     $sontti = "./fonts/simsun.ttc";
 
     imagecopy($tplsource, $headsource, 18 + (140 - $headsize[0]) / 2, 35 + (140 - $headsize[1]) / 2, 0, 0, $headsize[0], $headsize[1]);
-    imagettftext($tplsource, 10, 0, 85, 23, $white, $yahei, $group . "  " . $tid);
+    imagettftext($tplsource, 10, 0, 65, 23, $white, $yahei, $group . "  " . $tid);
     imagettftext($tplsource, 13, 0, 190, 52, $red, $yahei, $nick);
     imagettftext($tplsource, 10, 0, 245, 52, $dark, $yahei, $name);
     imagettftext($tplsource, 10, 0, 295, 52, $gray, $yahei, $post);

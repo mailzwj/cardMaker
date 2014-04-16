@@ -45,6 +45,6 @@
         //         $("body").append('<img src="' + data.card["card_url"] + '">');
         //     }
         // });
-        $("#Result").append('<img src="' + api + '">');
+        $("#Result").html('<img src="' + api + '">');
     });
 })(jQuery);

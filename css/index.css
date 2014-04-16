@@ -30,12 +30,16 @@
     display: none;
 }
 
+.card,
+.help {
+    font-family: '\5fae\8f6f\96c5\9ed1', "Microsoft YaHei", Tahoma, san-serif;
+}
+
 .card {
     position: relative;
     margin: 15px auto;
     width: 520px;
     height: 180px;
-    font-family: '\5fae\8f6f\96c5\9ed1', "Microsoft YaHei", Tahoma, san-serif;
 }
 
 .card .text-box {
@@ -111,16 +115,22 @@
 .card .head-area .fileinput-button {
     position: absolute;
     left: 5px;
-    bottom: 10px;
-    margin: 0 auto;
-    padding: 2px 3px;
+    bottom: 5px;
     width: 140px;
+    height: 140px;
     font-size: 12px;
+    background-color: transparent;
+    border: 0;
+}
+
+.card .head-area .fileinput-button:hover {
+    background-color: transparent;
+    border: 0;
 }
 
 .card .head-area .user-info {
     position: absolute;
-    left: 62px;
+    left: 58px;
     top: 6px;
 }
 
@@ -158,4 +168,58 @@
 .result {
     padding-top: 10px;
     text-align: center;
+}
+
+/* Help */
+.help {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    padding: 5px;
+    width: 54px;
+    height: 52px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    overflow: hidden;
+    -webkit-transition: width 0.2s ease-out, height 0.2s ease-out;
+    -moz-transition: width 0.2s ease-out, height 0.2s ease-out;
+    -o-transition: width 0.2s ease-out, height 0.2s ease-out;
+    -ms-transition: width 0.2s ease-out, height 0.2s ease-out;
+    transition: width 0.2s ease-out, height 0.2s ease-out;
+    background-color: #fff;
+}
+
+.help:hover {
+    width: 530px;
+    height: auto;
+}
+
+.help .help-title,
+.help .help-content {
+    width: 520px;
+    visibility: hidden;
+}
+
+.help:hover .help-title,
+.help:hover .help-content {
+    visibility: visible;
+}
+
+.help .help-title {
+    margin-top: 5px;
+}
+
+.help .help-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 32px;
+    color: #f00;
+    cursor: pointer;
+}
+
+.help:hover .help-icon {
+    display: none;
 }

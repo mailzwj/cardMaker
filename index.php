@@ -43,13 +43,13 @@
                 <input type="hidden" name="userpic" id="UserPic" value="./imgs/default.png">
                 <div class="head-pic" id="HeadPic" style="background-image: url(./imgs/default.png);"></div>
                 <span class="btn btn-success fileinput-button">
-                    <i class="glyphicon glyphicon-plus"></i>
-                    <span>上传头像</span>
+                    <!-- <i class="glyphicon glyphicon-plus"></i>
+                    <span>上传头像</span> -->
                     <input id="fileupload" type="file" name="files">
                 </span>
                 <div class="user-info">
-                    <input type="text" name="group" id="UserGroup" class="group mini-text" placeholder="组">&nbsp;
-                    <input type="text" name="tid" id="UserId" class="mini-text" placeholder="工号">
+                    <input type="text" name="group" id="UserGroup" class="group mini-text" placeholder="部门">&nbsp;
+                    <input type="text" name="tid" id="UserId" class="mini-text" placeholder="组">
                 </div>
             </div>
         </form>
@@ -64,6 +64,17 @@
         <input type="button" id="CreateCard" value="生成名片" class="btn btn-primary">
     </div>
     <div class="result" id="Result"></div>
+    <div class="help">
+        <h3 class="help-title">使用说明</h3>
+        <div class="help-content">
+            &nbsp;&nbsp;&nbsp;&nbsp;1、头像规格（140x140），大图等比压缩。<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;2、图片格式（png/jpg/gif），png24最佳。<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;3、点击“生成名片”后，“右键”—“图片另存为...”，即得到个人名片。<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;4、生成案例，请对照填写相关信息
+            <img src="./imgs/myCard.png" alt="" style="margin-top: 5px;">
+        </div>
+        <span class="glyphicon glyphicon-hand-up help-icon"></span>
+    </div>
 <script src="./js/jquery-1.11.0.min.js"></script>
 <script src="./js/jquery.ui.widget.js"></script>
 <script src="./js/jquery.iframe-transport.js"></script>
