@@ -207,6 +207,10 @@
     visibility: visible;
 }
 
+.help .help-content {
+    font-size: 12px;
+}
+
 .help .help-title {
     margin-top: 5px;
 }

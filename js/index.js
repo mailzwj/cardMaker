@@ -47,4 +47,11 @@
         // });
         $("#Result").html('<img src="' + api + '">');
     });
+
+    if(!("placeholder" in document.createElement("input"))){
+        $.getScript("./js/jquery.placeholder.1.3.min.js",function(){
+            $.Placeholder.init();
+        });
+    }
+
 })(jQuery);
