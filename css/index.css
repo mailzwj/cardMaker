@@ -30,6 +30,10 @@
     display: none;
 }
 
+body {
+    font-size: 12px;
+}
+
 .card,
 .help {
     font-family: '\5fae\8f6f\96c5\9ed1', "Microsoft YaHei", Tahoma, san-serif;
@@ -53,7 +57,7 @@
 }
 
 .card .text-box .text-main {
-    padding-top: 30px;
+    padding-top: 25px;
     padding-right: 20px;
     padding-left: 190px;
 }
@@ -73,14 +77,14 @@
 }
 
 .card .text-box .contact {
-    margin-top: 10px;
+    margin-top: 5px;
     margin-bottom: 5px;
     color: #999;
     font-size: 12px;
 }
 
 .card .text-box .text-main .line2 {
-    margin: 0;
+    margin-bottom: 5px;
 }
 
 .card .text-box .userbu {
@@ -88,7 +92,6 @@
 }
 
 .card .text-box .address {
-    margin-top: 5px;
     margin-bottom: 0;
     color: #999;
 }
@@ -131,12 +134,15 @@
 .card .head-area .user-info {
     position: absolute;
     left: 58px;
-    top: 6px;
+    top: 7px;
 }
 
 .short-text,
-.long-text {
-    height: 24px;
+.long-text,
+.long-long-text,
+.mini-text,
+.big-text {
+    height: 20px;
 }
 
 .short-text {
@@ -153,6 +159,10 @@
     width: 110px;
 }
 
+.long-long-text {
+    width: 200px;
+}
+
 .big-text {
     width: 150px;
 }
@@ -166,7 +176,12 @@
 }
 
 .result {
-    padding-top: 10px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.download {
+    display: none;
     text-align: center;
 }
 

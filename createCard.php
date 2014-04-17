@@ -45,17 +45,19 @@
 
     function echoImage($mime, $source) {
         $ext = explode("/", $mime)[1];
+        $fname = "./profiles/" . date("dMYHis") . "." . $ext;
         switch($ext) {
             case "png":
-                imagepng($source);
+                imagepng($source, $fname);
                 break;
             case "jpeg":
-                imagejpeg($source);
+                imagejpeg($source, $fname);
                 break;
             case "gif":
-                imagegif($source);
+                imagegif($source, $fname);
                 break;
         }
+        return $fname;
     }
 
     date_default_timezone_set("PRC");
@@ -70,6 +72,8 @@
     $group = htmlspecialchars($_GET["group"]);
     $phone = htmlspecialchars($_GET["phone"]);
     $email = htmlspecialchars($_GET["email"]);
+    $com = htmlspecialchars($_GET["company"]);
+    $floor = "杭州市萧山区金城路1038号国际创业中心" . htmlspecialchars($_GET["floor"]) . "楼";
 
     $headsize = getimagesize($head);
     $tplsize = getimagesize($tpl);
@@ -93,11 +97,14 @@
     imagettftext($tplsource, 13, 0, 190, 52, $red, $yahei, $nick);
     imagettftext($tplsource, 10, 0, 245, 52, $dark, $yahei, $name);
     imagettftext($tplsource, 10, 0, 295, 52, $gray, $yahei, $post);
+    imagettftext($tplsource, 10, 0, 192, 98, $gray, $sontti, $com);
     // imagettftext($tplsource, 10, 0, 290, 46, $gray, $yahei, $tid);
     // imagettftext($tplsource, 10, 0, 410, 46, $gray, $yahei, $group);
-    imagettftext($tplsource, 10, 0, 192, 110, $gray, $sontti, $phone);
-    imagettftext($tplsource, 10, 0, 192, 132, $gray, $sontti, $email);
+    imagettftext($tplsource, 10, 0, 192, 118, $gray, $sontti, $phone);
+    imagettftext($tplsource, 10, 0, 192, 138, $gray, $sontti, $email);
+    imagettftext($tplsource, 10, 0, 192, 160, $gray, $sontti, $floor);
 
-    header("Content-Type: " . $tplsize["mime"]);
-    echoImage($tplsize["mime"], $tplsource);
+    // header("Content-Type: " . $tplsize["mime"]);
+    $src = echoImage($tplsize["mime"], $tplsource);
+    echo htmlspecialchars($_GET["callback"]) . "({\"card\":\"" . $src . "\"})";
 ?>

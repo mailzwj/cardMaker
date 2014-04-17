@@ -29,13 +29,25 @@
                         </p> -->
                     </div>
                     <p class="contact">
-                        <input type="text" class="big-text" name="phone" id="Phone" placeholder="电话号码">
+                        <select class="long-long-text" name="company" id="Company" style="width: 220px;">
+                            <option value="无极卡当网络科技（杭州）有限公司">无极卡当网络科技（杭州）有限公司</option>
+                            <option value="杭州卡当礼品有限公司">杭州卡当礼品有限公司</option>
+                            <option value="杭州皆可定网络科技有限公司">杭州皆可定网络科技有限公司</option>
+                        </select>
                     </p>
                     <p class="contact line2">
-                        <input type="text" class="big-text" name="email" id="Email" placeholder="电子邮件">
+                        <input type="text" class="big-text" name="phone" id="Phone" placeholder="电话、QQ">
+                    </p>
+                    <p class="contact line2">
+                        <input type="text" class="long-long-text" name="email" id="Email" placeholder="电子邮件">
                     </p>
                     <p class="address">
-                        杭州市萧山区金城路1038号国际创业中心13楼
+                        杭州市萧山区金城路1038号国际创业中心
+                        <select class="mini-text" name="floor" id="Floor">
+                            <option value="13">13</option>
+                            <option value="10">10</option>
+                        </select>
+                        楼
                     </p>
                 </div>
             </div>
@@ -64,6 +76,9 @@
         <input type="button" id="CreateCard" value="生成名片" class="btn btn-primary">
     </div>
     <div class="result" id="Result"></div>
+    <div class="download" id="Download">
+        <a href="javascript:void(0);" id="DownCard" class="btn btn-success">下载名片</a>
+    </div>
     <div class="help">
         <h3 class="help-title">使用说明</h3>
         <div class="help-content">

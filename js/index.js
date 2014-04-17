@@ -35,17 +35,33 @@
         .parent().addClass($.support.fileInput ? undefined : 'disabled');
 
     $("#CreateCard").click(function(){
-        var params = $("#CardForm").serialize();
+        var inps = $("input[placeholder!='']");
+        var params = "";
         // var api = createApi + "?" + params + "&callback=?";
-        var api = createApi + "?" + params;
-        // $.ajax({
-        //     "url": api,
-        //     "dataType": "jsonp",
-        //     "success": function(data){
-        //         $("body").append('<img src="' + data.card["card_url"] + '">');
-        //     }
-        // });
-        $("#Result").html('<img src="' + api + '">');
+        var api = "";
+        var emps = [];
+        inps.each(function(index, item){
+            if ($(item).attr("placeholder") === $(item).val()) {
+                $(item).val("");
+                emps.push(item);
+            }
+        });
+        params = $("#CardForm").serialize();
+        api = createApi + "?" + params;
+        $.each(emps, function(index, item){
+            $(item).val($(item).attr("placeholder"));
+        });
+        // $("#Result").html('<img src="' + api + '">');
+        $.ajax({
+            url: api + "&callback=?",
+            dataType: "jsonp",
+            success: function(data){
+                if (data && data.card) {
+                    $("#Result").html('<img src="' + data.card + '">');
+                    $("#DownCard").attr("href", "./download.php?pic=" + encodeURIComponent(data.card)).parent().css("display", "block");
+                }
+            }
+        })
     });
 
     if(!("placeholder" in document.createElement("input"))){
