@@ -91,6 +91,8 @@
     $yahei = "./fonts/msyh.ttf";
     $consola = "./fonts/consola.ttf";
     $sontti = "./fonts/simsun.ttc";
+    $tahoma = "./fonts/tahoma.ttf";
+    $arial = "./fonts/arial.ttf";
 
     imagecopy($tplsource, $headsource, 18 + (140 - $headsize[0]) / 2, 35 + (140 - $headsize[1]) / 2, 0, 0, $headsize[0], $headsize[1]);
     imagettftext($tplsource, 10, 0, 65, 23, $white, $yahei, $group . "  " . $tid);
@@ -100,8 +102,8 @@
     imagettftext($tplsource, 10, 0, 192, 98, $gray, $sontti, $com);
     // imagettftext($tplsource, 10, 0, 290, 46, $gray, $yahei, $tid);
     // imagettftext($tplsource, 10, 0, 410, 46, $gray, $yahei, $group);
-    imagettftext($tplsource, 10, 0, 192, 118, $gray, $sontti, $phone);
-    imagettftext($tplsource, 10, 0, 192, 138, $gray, $sontti, $email);
+    imagettftext($tplsource, 10, 0, 192, 118, $gray, $arial, $phone);
+    imagettftext($tplsource, 10, 0, 192, 138, $gray, $arial, $email);
     imagettftext($tplsource, 10, 0, 192, 160, $gray, $sontti, $floor);
 
     // header("Content-Type: " . $tplsize["mime"]);
